@@ -27,5 +27,6 @@ class Menu(models.Model):
 
 class Suministros(models.Model):
     nombreIngrediente = models.CharField(max_length=64)
+    cantidad_ingredienteXbolsa = models.IntegerField(default=0)
     nombreBebidas = models.CharField(max_length=64)
     cantidad_Bebidas = models.IntegerField()
