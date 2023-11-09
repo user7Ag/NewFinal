@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<p>
+  <strong>Numero de Reserva</strong> {{object.numeroDeReserva}}
+</p>
+<p>
+  <strong>Nombre del cliente</strong> {{object.nombre_cliente}}
+</p>
+<p>
+  <strong>Numero de comensales</strong> {{object.numero_comensales}}
+</p>
+
+<br>
+<a href="{% url 'lista_reservas' %}">Volver lista</a>
+<a href="{% url 'editar_reservas' object.id %}">Editar</a>
+
+{% endblock contenido %}

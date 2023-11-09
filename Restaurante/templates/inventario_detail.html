@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<p>
+  <strong>Cantidad de platos final del dia</strong> {{object.cantidad_platosFinalDia}}
+</p>
+<p>
+  <strong>Cantidad de vasos final del dia</strong> {{object.cantidad_vasosFinalDia}}
+</p>
+<p>
+  <strong>Cantidad de cuchillos final del dia</strong> {{object.cantidad_cuchillosFinalDia}}
+</p>
+<p>
+  <strong>Cantidad de tenedores final del dia</strong> {{object.cantidad_tenedoresFinalDia}}
+</p>
+
+<br>
+<a href="{% url 'lista_inventarios' %}">Volver lista</a>
+<a href="{% url 'editar_inventarios' object.id %}">Editar</a>
+
+{% endblock contenido %}
+

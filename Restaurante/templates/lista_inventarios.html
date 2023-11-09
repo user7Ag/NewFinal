@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>Coderhouse 47780 - Inventarios</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<h3>Sistema de Empleados</h3>
+<a href="{% url 'crear_inventarios' %}">Crear inventario</a>
+<br>
+
+<table class="table">
+  <tbody>
+    <tr>
+      <th>Cantidad de platos final del dia</th>
+      <th>Cantidad de vasos final del dia</th>
+      <th>Cantidad de cuchillos final del dia</th>
+      <th>cantidad de tenedores final del dia</th>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for inventario in object_list %}
+    <tr>
+      <td>{{ inventario.cantidad_platosFinalDia }}</td>
+      <td>{{ inventario.cantidad_vasosFinalDia }}</td>
+      <td>{{ inventario.cantidad_cuchillosFinalDia }}</td>
+      <td>{{ inventario.cantidad_tenedoresFinalDia }}</td>
+      <td>
+        <a href="{% url 'ver_inventarios' inventario.id %}">Ver</a>
+      </td>
+      <td>
+        <a href="{% url 'editar_inventarios' inventario.id %}">Editar</a>
+      </td>
+      <td>
+        <a href="{% url 'eliminar_inventarios' inventario.id %}">
+          <i class="bi bi-trash"></i>
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock contenido %}

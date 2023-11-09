@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<p>
+  <strong>Nombre ingrediente:</strong> {{object.nombreIngrediente}}
+</p>
+<p>
+  <strong>Cantidad de ingrediente por bolsa:</strong> {{object.cantidad_ingredienteXbolsa}}
+</p>
+<p>
+  <strong>Nombre de bebidas:</strong> {{object.nombreBebidas}}
+</p>
+<p>
+  <strong>Cantidad de bebidas:</strong> {{object.cantidad_Bebidas}}
+</p>
+
+<br>
+<a href="{% url 'lista_suministros' %}">Volver lista</a>
+<a href="{% url 'editar_suministros' object.id %}">Editar</a>
+
+{% endblock contenido %}

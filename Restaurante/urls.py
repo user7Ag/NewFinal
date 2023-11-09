@@ -19,30 +19,30 @@ from Restaurante.views import(
 
 urlpatterns=[
     path("empleado/", EmpleadoListView.as_view(), name="lista_empleados"),
-    path("empleado/<int:pk>/" ,EmpleadoDetailView.as_view(), name="ver_empelado"),
-    path("crear-emplado/", EmpleadoCreateView.as_view(), name="crear_empleado"),
-    path("editar-empleado/<int:pk>/", EmpleadoUpdateView.as_view(), name="editar_empleado"),
-    path("eliminar-empleado/<int:pk>/", EmpleadoDeleteView.as_view(),name="eliminar_empleado"),
+    path("empleado/<int:pk>/" ,EmpleadoDetailView.as_view(), name="ver_empelados"),
+    path("crear-emplado/", EmpleadoCreateView.as_view(), name="crear_empleados"),
+    path("editar-empleado/<int:pk>/", EmpleadoUpdateView.as_view(), name="editar_empleados"),
+    path("eliminar-empleado/<int:pk>/", EmpleadoDeleteView.as_view(),name="eliminar_empleados"),
 ]
 
 #URLS RESERVA APP Restaurante
 
 urlpatterns=[
     path("reserva/", ReservaListView.as_view(), name="lista_reservas"),
-    path("reserva/<int:pk>/", ReservaDetailView.as_view(), name="ver_reserva"),
-    path("crear-reserva/", ReservaCreateView.as_view(), name="crear_reserva"),
-    path("editar-reserva/<int:pk>/", ReservaUpdateView.as_view(), name="editar_reserva"),
-    path("eliminar-reserva/<int:pk>/", ReservaDeleteView.as_view(),name="eliminar_reserva"),
+    path("reserva/<int:pk>/", ReservaDetailView.as_view(), name="ver_reservas"),
+    path("crear-reserva/", ReservaCreateView.as_view(), name="crear_reservas"),
+    path("editar-reserva/<int:pk>/", ReservaUpdateView.as_view(), name="editar_reservas"),
+    path("eliminar-reserva/<int:pk>/", ReservaDeleteView.as_view(),name="eliminar_reservas"),
 ]
 
 #URLS INVENTARIO APP Restaurante
 
 urlpatterns=[
     path("inventario/",InventarioListView.as_view(), name="lista_inventarios"),
-    path("inventario/<int:pk>/", InventarioDetailView.as_view(), name="ver_inventario"),
-    path("crear-inventario/", InventarioCreateView.as_view(), name="crear_inventario"),
-    path("editar-inventario/<int:pk>/", InventarioUpdateView.as_view(), name="editar_inventario"),
-    path("eliminar-inventario/<int:pk>/", InventarioDeleteView.as_view(), name="eliminar_inventario"),
+    path("inventario/<int:pk>/", InventarioDetailView.as_view(), name="ver_inventarios"),
+    path("crear-inventario/", InventarioCreateView.as_view(), name="crear_inventarios"),
+    path("editar-inventario/<int:pk>/", InventarioUpdateView.as_view(), name="editar_inventarios"),
+    path("eliminar-inventario/<int:pk>/", InventarioDeleteView.as_view(), name="eliminar_inventarios"),
 ]
 
 #URLS Menu APP Restaurante

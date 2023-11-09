@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>Coderhouse 47780 - Menus</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<h3>Sistema de Empleados</h3>
+<a href="{% url 'crear_menus' %}">Crear Menus</a>
+<br>
+
+<table class="table">
+  <tbody>
+    <tr>
+      <th>Nombre del plato</th>
+      <th>Precio del plato</th>
+      <th>Descripcion del plato</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for empleado in object_list %}
+    <tr>
+      <td>{{ menu.nombreDelPlato }}</td>
+      <td>{{ menu.precioDelPlato }}</td>
+      <td>{{ menu.descripcionDelPlato }}</td>
+      <td>
+        <a href="{% url 'ver_menus' menu.id %}">Ver</a>
+      </td>
+      <td>
+        <a href="{% url 'editar_menus' menu.id %}">Editar</a>
+      </td>
+      <td>
+        <a href="{% url 'eliminar_menus' menu.id %}">
+          <i class="bi bi-trash"></i>
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock contenido %}

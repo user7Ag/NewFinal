@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+<title>Coderhouse 47780 - Reservas</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<h3>Sistema de Reservas</h3>
+<a href="{% url 'crear_reserva' %}">Crear una reserva</a>
+<br>
+
+<table class="table">
+  <tbody>
+    <tr>
+      <th>ID de Reserva</th>
+      <th>Numero de Reserva</th>
+      <th>Nombre del cliente</th>
+      <th>Numero de comensales</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    {% for empleado in object_list %}
+    <tr>
+      <td>{{ reserva.id }}</td>
+      <td>{{ reserva.numeroDeReserva }}</td>
+      <td>{{ reserva.nombre_cliente }}</td>
+      <td>{{ reserva.numero_comensales }}</td>
+      <td>
+        <a href="{% url 'ver_reservas' reservas.id %}">Ver</a>
+      </td>
+      <td>
+        <a href="{% url 'editar_reservas' reservas.id %}">Editar</a>
+      </td>
+      <td>
+        <a href="{% url 'eliminar_reservas' reservas.id %}">
+          <i class="bi bi-trash"></i>
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock contenido %}

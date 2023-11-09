@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<p>
+  <strong>Numero del Plato</strong> {{object.nombreDelPlato}}
+</p>
+<p>
+  <strong>Precio del Plato</strong> {{object.precioDelPlato}}
+</p>
+<p>
+  <strong>Descripcion del plato</strong> {{object.descripcionDelPlato}}
+</p>
+
+<br>
+<a href="{% url 'lista_menus' %}">Volver lista</a>
+<a href="{% url 'editar_menus' object.id %}">Editar</a>
+
+{% endblock contenido %}
